@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Kalkulator Sederhana</title>
+  </head>
+  <body>
+    <h1>Kalkulator Sederhana</h1>
+    <input type="text" id="num1" placeholder="">
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input type="text" id="num2" placeholder="">
+    <button onclick="calculate()">Hitung</button>
+    <p id="result"></p>
+
+    <script>
+      function calculate() {
+        let num1 = parseInt(document.getElementById("num1").value);
+        let num2 = parseInt(document.getElementById("num2").value);
+        let operator = document.getElementById("operator").value;
+
+        if (operator === "+") {
+          let result = num1 + num2;
+          document.getElementById("result").innerHTML = `Hasilnya adalah : ${result}`;
+        } else if (operator === "-") {
+          let result = num1 - num2;
+          document.getElementById("result").innerHTML = `Hasilnya adalah : ${result}`;
+        } else if (operator === "*") {
+          let result = num1 * num2;
+          document.getElementById("result").innerHTML = `Hasilnya adalah : ${result}`;
+        } else if (operator === "/") {
+          if (num2 !== 0) {
+            let result = num1 / num2;
+            document.getElementById("result").innerHTML = `Hasilnya adalah : ${result}`;
+          } else {
+            document.getElementById("result").innerHTML = "Error: Division by zero";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
